@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "vazir";
+    font-weight: normal;
+    font-style: normal;
+    src: url('../public/fonts/eot/Vazirmatn-FD-Regular.eot');
+    src: url('../public/fonts/eot/Vazirmatn-FD-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/woff2/Vazirmatn-FD-Regular.woff2') format('woff2'),
+    url('../public/fonts/woff/Vazirmatn-FD-Regular.woff') format('woff'),
+    url('../public/fonts/ttf/Vazirmatn-FD-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "vazir_bold";
+    font-weight: bold;
+    font-style: normal;
+    src: url('../public/fonts/eot/Vazirmatn-FD-Bold.eot');
+    src: url('../public/fonts/eot/Vazirmatn-FD-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../public/fonts/woff2/Vazirmatn-FD-Bold.woff2') format('woff2'),
+    url('../public/fonts/woff/Vazirmatn-FD-Bold.woff') format('woff'),
+    url('../public/fonts/ttf/Vazirmatn-FD-Bold.ttf') format('truetype');
+    font-display: swap;
+}

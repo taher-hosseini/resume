@@ -1,0 +1,74 @@
+/* contact us */
+.contactus{
+    margin-top: 10rem;
+}
+.contactus__wrapper{
+    background-image: url(/images/map.jpg);
+    background-size: cover;
+    height: 80rem;
+    padding: 5rem 0;
+}
+.contactus__map{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+    background-color: var(--app-bg-color);
+    box-shadow: 0 0 4rem rgba(96,233,255,27%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 35%;
+    left: 20%;
+}
+.contactus__icon{
+    width: 2rem;
+}
+.contact{
+    background-color: var(--section-bg-color);
+    box-shadow: 0 0 4rem rgba(19,182,255,24%);
+    max-width: 55rem;
+    padding: 4.5rem;
+    margin-left: auto;
+
+}
+.contact__title{
+    font-family: "Poppins Bold";
+    font-size: 3.2rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+.contact__form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.contact__input{
+    border: none;
+    outline: none;
+    padding: 1.5rem 2.5rem;
+    box-shadow: 0 0 5rem rgba(96,233,255,27%);
+    border-radius: 1rem;
+    color: var(--text-color);
+    background-color: var(--app-bg-color);
+}
+.contact__input::placeholder{
+    color: inherit;
+}
+.contact__input_textarea{
+    resize: vertical;
+    max-height: 15rem;
+    min-height: 8rem;
+}
+.contact__submit{
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 1.5rem;
+    border-radius: 5rem;
+    font-family: "Poppins SemiBold";
+    font-size: 1.8rem;
+    cursor: pointer;
+}

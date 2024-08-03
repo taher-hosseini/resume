@@ -1,0 +1,42 @@
+
+/* footer */
+.footer{
+    padding: 2rem 0;
+    background-color: var(--app-bg-color);
+}
+.footer__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__copy_right{
+    font-family: "Poppins SemiBold";
+    letter-spacing: .4rem;
+}
+.footer__socials{
+    display: flex;
+    gap: 1rem;
+}
+.footer__social,
+.change_theme{
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 100%;
+    background-color: #1F2935;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.footer__social:hover{
+    background-color: var(--primary-color);
+}
+.footer__social > svg,
+.change_theme > svg {
+    height: 3rem;
+    width: 3rem;
+    fill: var(--app-bg-color);
+}
+.change_theme svg {
+    fill: #fff;
+}

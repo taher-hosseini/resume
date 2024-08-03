@@ -1,0 +1,123 @@
+/* styles/Header.module.css */
+.header {
+    background-color: var(--section-bg-color);
+    box-shadow: 0 0.5rem 4rem rgba(4,195,255,16%);
+    z-index: 100;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.nav__logo {
+    color: var(--primary-color);
+    font-family: "Poppins Black";
+    font-size: 6rem;
+    margin: 0;
+}
+
+.menu {
+    display: flex;
+    z-index: 100;
+}
+
+.menu__item {
+    margin-left: 4rem;
+}
+
+.menu__item:last-child {
+    margin-right: 0;
+}
+
+.menu__item_active {
+    color: var(--primary-color);
+}
+
+.menu__link {
+    display: inline-block;
+    color: inherit;
+    font-family: "Poppins Medium";
+    transition: color 100ms ease-in;
+}
+
+.menu__link:hover {
+    color: var(--primary-color);
+}
+
+.nav__toggle_icon {
+    display: none;
+    height: 5rem;
+    width: 5rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav__toggle_line {
+    position: relative;
+    transition: all 10ms ease-in;
+}
+
+.nav__toggle_line,
+.nav__toggle_line::after,
+.nav__toggle_line::before {
+    content: " ";
+    width: 4.5rem;
+    height: 0.4rem;
+    background-color: var(--primary-color);
+    border-radius: 2rem;
+}
+
+.nav__toggle_line::after {
+    position: absolute;
+    top: 1rem;
+    transition: all 150ms ease-in;
+}
+
+.nav__toggle_line::before {
+    position: absolute;
+    top: -1rem;
+    transition: all 150ms ease-in;
+}
+
+.nav__toggle_icon--open .nav__toggle_line {
+    background-color: transparent;
+}
+
+.nav__toggle_icon--open .nav__toggle_line::after {
+    transform: translateY(-1rem) rotate(-45deg);
+}
+
+.nav__toggle_icon--open .nav__toggle_line::before {
+    transform: translateY(1rem) rotate(45deg);
+}
+
+
+.change_theme{
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 100%;
+    background-color: #1F2935;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.change_theme:hover{
+    background-color: var(--primary-color);
+}
+.change_theme > svg {
+    height: 3rem;
+    width: 3rem;
+    fill: var(--app-bg-color);
+}
+.change_theme svg {
+    fill: #fff;
+}
