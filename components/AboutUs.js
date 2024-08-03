@@ -12,7 +12,7 @@ export default function AboutUs() {
                 </div>
                 <div className={`${styles.about} about_g`}>
                     <div className={styles.about__cover}>
-                        <img className={styles.about__img} src="/images/taher2.jpg" alt="about"/>
+                        <img className={styles.about__img} src="/images/taher2.JPG" alt="about"/>
                     </div>
                     <div className={styles.about__content}>
                         <h4 className={styles.about__title}>معرفی:</h4>
