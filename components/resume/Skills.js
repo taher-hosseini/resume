@@ -1,20 +1,18 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faHtml5, faCss3Alt, faJs, faBootstrap, faGitAlt } from '@fortawesome/free-brands-svg-icons';
-import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri';
-import { FaSass } from 'react-icons/fa';
+import {RiJavascriptFill, RiNextjsFill, RiTailwindCssFill} from 'react-icons/ri';
+import {FaBootstrap, FaCss3Alt, FaGitAlt, FaHtml5, FaReact, FaSass} from 'react-icons/fa';
 import { SiWebstorm } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
 import styles from '../../styles/Resume.module.css';
 
 const skills = [
-    { icon: <FontAwesomeIcon icon={faReact} style={{ color: "#74C0FC" }} />, name: "React", level: "متوسط" },
-    { icon: <FontAwesomeIcon icon={faHtml5} style={{ color: "#ff8040" }} />, name: "HTML", level: "پیشرفته" },
-    { icon: <FontAwesomeIcon icon={faCss3Alt} style={{ color: "#74C0FC" }} />, name: "CSS", level: "پیشرفته" },
-    { icon: <FontAwesomeIcon icon={faJs} style={{ color: "#FFD43B" }} />, name: "Javascript", level: "پیشرفته" },
-    { icon: <FontAwesomeIcon icon={faBootstrap} style={{ color: "#B197FC" }} />, name: "Bootstrap", level: "پیشرفته" },
-    { icon: <FontAwesomeIcon icon={faGitAlt} style={{ color: "#ff6666" }} />, name: "Git", level: "متوسط" },
+    { icon: <FaReact style={{ color: "#74C0FC" }} />, name: "React", level: "متوسط" },
     { icon: <RiNextjsFill />, name: "Next Js", level: "متوسط" },
+    { icon: <FaHtml5 style={{ color: "#ff8040" }} />, name: "HTML", level: "پیشرفته" },
+    { icon: <FaCss3Alt style={{ color: "#74C0FC" }} />, name: "CSS", level: "پیشرفته" },
+    { icon: <RiJavascriptFill style={{ color: "#FFD43B" }} />, name: "Javascript", level: "پیشرفته" },
+    { icon: <FaBootstrap style={{ color: "#B197FC" }} />, name: "Bootstrap", level: "پیشرفته" },
+    { icon: <FaGitAlt style={{ color: "#ff6666" }} />, name: "Git", level: "متوسط" },
     { icon: <FaSass style={{ color: "#df0070" }} />, name: "SASS", level: "متوسط" },
     { icon: <RiTailwindCssFill style={{ color: "#2ea4af" }} />, name: "Tailwind", level: "متوسط" },
     { icon: <SiWebstorm />, name: "Webstorm", level: "پیشرفته" },
