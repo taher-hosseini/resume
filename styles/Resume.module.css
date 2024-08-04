@@ -17,6 +17,7 @@
     min-height: 40rem;
     margin-left: 3rem;
     height: max-content;
+    width: 100%;
 }
 .resume_list::before{
     position: absolute;

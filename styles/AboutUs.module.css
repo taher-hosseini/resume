@@ -101,3 +101,23 @@
     background-color: #F57F17;
     box-shadow: 0 1.5rem 4rem rgba(245, 127, 23, 24%);
 }
+
+
+
+@media screen and (max-width: 1400px) {
+
+}
+@media screen and (max-width: 1200px) {
+
+}
+@media screen and (max-width: 992px) {
+    .about__cover{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+@media screen and (max-width: 768px) {
+
+}
