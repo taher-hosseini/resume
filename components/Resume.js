@@ -1,6 +1,8 @@
 // components/Resume.js
 import styles from '../styles/Resume.module.css';
 import {useState} from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faReact} from "@fortawesome/free-brands-svg-icons";
 
 export default function Resume() {
     const [activeContent, setActiveContent] = useState('#education');
@@ -40,19 +42,17 @@ export default function Resume() {
                                 <span className={styles.resume_list__text}>سوابق شغلی</span>
                             </li>
                             <li className={`${styles.resume_list__item} ${activeContent === '#Programming-skill' ? styles.resume_list__item_active : ''}`}
-                                onClick={() => handleContentChange('#Programming-skill')}
-                                data-content-id="#Programming-skill">
+                                onClick={() => handleContentChange('#Programming-skill')} data-content-id="#Programming-skill">
                                 <svg className={styles.resume_list__icon} width="24.126" height="19.301"
                                      viewBox="0 0 24.126 19.301">
                                     <path id="Icon_awesome-laptop-code" data-name="Icon awesome-laptop-code"
                                           d="M480.713,3922.65h-19.3a2.416,2.416,0,0,1-2.413-2.413v-.6a.6.6,0,0,1,.6-.6h9.018a1.2,1.2,0,0,0,.366.824,1.22,1.22,0,0,0,.869.382h2.292a1.185,1.185,0,0,0,1.234-1.206h9.14a.6.6,0,0,1,.6.6v.6A2.416,2.416,0,0,1,480.713,3922.65Zm0-4.826h-19.3v-12.666a1.812,1.812,0,0,1,1.809-1.81H478.9a1.812,1.812,0,0,1,1.81,1.81v12.665Zm-16.893-12.065v9.65H478.3v-9.65Zm9.265,7.63a.6.6,0,0,1-.427-.177l-.426-.426a.606.606,0,0,1,0-.854l1.346-1.346-1.346-1.347a.6.6,0,0,1,0-.853l.426-.427a.6.6,0,0,1,.854,0l2.2,2.2a.606.606,0,0,1,0,.854l-2.2,2.2A.6.6,0,0,1,473.086,3913.389Zm-4.046,0a.6.6,0,0,1-.426-.177l-2.2-2.2a.6.6,0,0,1,0-.854l2.2-2.2a.6.6,0,0,1,.854,0l.426.426a.605.605,0,0,1,0,.854l-1.346,1.347,1.346,1.346a.6.6,0,0,1,0,.854l-.426.426A.6.6,0,0,1,469.04,3913.389Z"
                                           transform="translate(-458.999 -3903.348)" fill="#fff"/>
                                 </svg>
-                                <span className={styles.resume_list__text}>Programming Skill</span>
+                                <span className={styles.resume_list__text}>مهارت ها</span>
                             </li>
                             <li className={`${styles.resume_list__item} ${activeContent === '#designer-skills' ? styles.resume_list__item_active : ''}`}
-                                onClick={() => handleContentChange('#designer-skills')}
-                                data-content-id="#designer-skills">
+                                onClick={() => handleContentChange('#designer-skills')} data-content-id="#designer-skills">
                                 <svg className={styles.resume_list__icon} width="23.303" height="18.448"
                                      viewBox="0 0 23.303 18.448">
                                     <path id="Icon_map-art-gallery" data-name="Icon map-art-gallery"
@@ -103,63 +103,47 @@ export default function Resume() {
                         <div className={`${styles.resume_content} ${activeContent === '#work-history' ? styles.resume_content_show : ''}`} id="work-history">
                             <div className={styles.resume_content__item}>
                                 <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>Envato University</h5>
-                                    <span className={styles.resume_content__date}>2010-2014</span>
+                                    <h5 className={styles.resume_content__title}>برنامه نویس فرانت</h5>
+                                    <span className={styles.resume_content__date}>1403/05 - 1403/01</span>
                                 </div>
-                                <h6 className={styles.resume_content__subtitle}>B.sc in Computer Engineer</h6>
-                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum, giving
-                                    information on its origins, as well as a
-                                    random Lipsum generator.
+                                <h6 className={styles.resume_content__subtitle}>فریلنسر</h6>
+                                <p className={styles.resume_content__description}>انجام کارهای فریلنسری
                                 </p>
                             </div>
                             <div className={styles.resume_content__item}>
                                 <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>Envato University</h5>
-                                    <span className={styles.resume_content__date}>2010-2014</span>
+                                    <h5 className={styles.resume_content__title}>برنامه نویس فرانت</h5>
+                                    <span className={styles.resume_content__date}>1396/12 - 1396/07</span>
                                 </div>
-                                <h6 className={styles.resume_content__subtitle}>B.sc in Computer Engineer</h6>
-                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum, giving
-                                    information on its origins, as well as a
-                                    random Lipsum generator.
-                                </p>
+                                <h6 className={styles.resume_content__subtitle}>دانشگاه فنی تبریز</h6>
+                                <p className={styles.resume_content__description}>همکاری در سایت ثبت نام دانشجویان دانشگاه فنی تبریز</p>
                             </div>
                         </div>
-                        <div className={`${styles.resume_content} ${activeContent === '#Programming-skill' ? styles.resume_content_show : ''}`} id="Programming-skill">
-                            <div className={styles.resume_content__item}>
+                        <div
+                            className={`${styles.resume_content_skill}  ${activeContent === '#Programming-skill' ? styles.resume_content_show : ''}`}
+                            id="Programming-skill">
+                            <div className={`${styles.resume_content__item}`}>
                                 <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>Envato University</h5>
-                                    <span className={styles.resume_content__date}>2010-2014</span>
+                                    <h5 className={styles.resume_content__title}>
+                                        <span><FontAwesomeIcon icon={faReact} style={{color: "#74C0FC",}}/></span>
+                                        React
+                                    </h5>
+                                    <span className={styles.resume_content__date}>متوسط</span>
                                 </div>
-                                <h6 className={styles.resume_content__subtitle}>B.sc in Computer Engineer</h6>
-                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum, giving
-                                    information on its origins, as well as a
-                                    random Lipsum generator.
-                                </p>
                             </div>
-                            <div className={styles.resume_content__item}>
+                            <div className={`${styles.resume_content__item}`}>
                                 <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>Envato University</h5>
-                                    <span className={styles.resume_content__date}>2010-2014</span>
+                                    <h5 className={styles.resume_content__title}>
+                                        <span><FontAwesomeIcon icon={faReact} style={{color: "#74C0FC",}}/></span>
+                                        React
+                                    </h5>
+                                    <span className={styles.resume_content__date}>متوسط</span>
                                 </div>
-                                <h6 className={styles.resume_content__subtitle}>B.sc in Computer Engineer</h6>
-                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum, giving
-                                    information on its origins, as well as a
-                                    random Lipsum generator.
-                                </p>
-                            </div>
-                            <div className={styles.resume_content__item}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>Envato University</h5>
-                                    <span className={styles.resume_content__date}>2010-2014</span>
-                                </div>
-                                <h6 className={styles.resume_content__subtitle}>B.sc in Computer Engineer</h6>
-                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum, giving
-                                    information on its origins, as well as a
-                                    random Lipsum generator.
-                                </p>
                             </div>
                         </div>
-                        <div className={`${styles.resume_content} ${activeContent === '#designer-skills' ? styles.resume_content_show : ''}`} id="designer-skills">
+                        <div
+                            className={`${styles.resume_content} ${activeContent === '#designer-skills' ? styles.resume_content_show : ''}`}
+                            id="designer-skills">
                             <div className={styles.resume_content__item}>
                                 <div className={styles.resume_content__head}>
                                     <h5 className={styles.resume_content__title}>Envato University</h5>

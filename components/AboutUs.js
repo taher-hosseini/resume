@@ -21,13 +21,13 @@ export default function AboutUs() {
 
 
                         </p>
-                        <h5 className={styles.about__listTitle}>Here is Few Features: </h5>
+                        <h5 className={styles.about__listTitle}>برخی از ویژگی‌ها:</h5>
                         <ul className={styles.aboutList}>
-                            <li className={styles.aboutList__item}>User Interface Design</li>
-                            <li className={styles.aboutList__item}>User Experience Design</li>
-                            <li className={styles.aboutList__item}>Visual Commination Design</li>
-                            <li className={styles.aboutList__item}>Interaction Design</li>
-                            <li className={styles.aboutList__item}>Supper Support</li>
+                            <li className={styles.aboutList__item}>توسعه ماژولار و قابل نگهداری</li>
+                            <li className={styles.aboutList__item}>مدیریت وضعیت با Redux و Context API</li>
+                            <li className={styles.aboutList__item}>توسعه رابط‌های کاربری واکنش‌گرا</li>
+                            <li className={styles.aboutList__item}>مدیریت پروژه و نسخه‌گذاری با Git و GitHub</li>
+                            <li className={styles.aboutList__item}>علاقه‌مند به یادگیری فناوری‌های جدید و به‌روز نگه‌داشتن مهارت‌ها</li>
                         </ul>
                         <div className={styles.about__linksWrapper}>
                             <a href="#" className={`${styles.appBtn} ${styles.about__link}`}>Hire Me</a>

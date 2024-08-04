@@ -80,6 +80,18 @@
     transition: opacity 0.3s ease-in;
     padding-right: 3rem;
 }
+.resume_content_skill{
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    padding-right: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+}
 .resume_content_show{
     overflow: visible;
     height: auto;
@@ -87,6 +99,7 @@
 }
 .resume_content__item{
     margin-bottom: 2rem;
+    /*grid-column: 1/2;*/
 }
 .resume_content__item:last-child{
     margin-bottom: 0;
