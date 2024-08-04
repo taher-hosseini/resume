@@ -26,7 +26,7 @@ export default function Resume() {
                     <span className="section-head__line"></span>
                 </div>
                 <div className="row">
-                    <div className="col-4">
+                    <div className="col-12 col-lg-4">
                         <ul className={`${styles.resume_list} resume_list_g h-full`}>
                             <li className={`${styles.resume_list__item} ${activeContent === '#education' ? styles.resume_list__item_active : ''}`}
                                 onClick={() => handleContentChange('#education')} data-content-id="#education">
@@ -80,7 +80,7 @@ export default function Resume() {
                             </li>
                         </ul>
                     </div>
-                    <div className="col-8 ">
+                    <div className="col-12 col-lg-8 ">
                         <div className={`${styles.resume_content} ${activeContent === '#education' ? styles.resume_content_show : ''}`} id="education">
                             <Education />
                         </div>

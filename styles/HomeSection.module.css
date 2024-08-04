@@ -6,6 +6,11 @@
   background-position: bottom;
   height: 82rem;
 }
+.home_wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .home__content {
   /* Add your styles here */
@@ -86,4 +91,43 @@
   background-position: center ;
   box-shadow: 0 0 4rem rgba(96,233,255,27%);
   border: 2rem solid #fff;
+}
+
+
+@media screen and (max-width: 1400px) {
+  .home__photo{
+    width: 45rem;
+    height: 45rem;
+  }
+  .home{
+    height: 76rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .home__photo{
+    width: 38rem;
+    height: 38rem;
+  }
+  .home{
+    height: 70rem;
+  }
+  .about__cover ,
+  .about__content{
+    flex-basis: 50%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .home {
+    margin-top: 6rem;
+    /*background-image: none;*/
+  }
+  .home_wrapper{
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home__title {
+    font-size: 3.5rem;
+  }
 }

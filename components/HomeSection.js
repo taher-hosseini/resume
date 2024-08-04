@@ -9,7 +9,7 @@ export default function HomeSection() {
         <section className={`${styles.home} home_g`}>
             <div className="container">
                 <div className="row align-items-center">
-                    <div className="col-12 col-lg-7">
+                    <div className={`col-12 col-lg-7 ${styles.home_wrapper}`}>
                         <div className={styles.home__content}>
                             <h3 className={styles.home__name }>
                                 طاهر حسینی نسب<span></span>
@@ -30,7 +30,7 @@ export default function HomeSection() {
                             </div>
                         </div>
                     </div>
-                    <div className="col-12 col-lg-5">
+                    <div className={`col-12 col-lg-5 ${styles.home_wrapper}`}>
                         <div className={`${styles.home__photo} home__photo_g`}></div>
                     </div>
                 </div>

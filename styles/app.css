@@ -2,6 +2,7 @@
 @import "normalize.css";
 @import "grid.css";
 @import "fonts.css";
+/*@import "responsive.css";*/
 
 :root{
     --text-color : #333333;
@@ -53,6 +54,8 @@ body{
 /* helper classes */
 .align-items-center{
     align-items: center;
+    display: flex;
+    justify-content: center;
 }
 .skew-reset{
     transform: translateZ(0) skewY(6deg);
