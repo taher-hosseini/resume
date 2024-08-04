@@ -25,26 +25,20 @@ export default function Header() {
                 <nav className={styles.nav}>
                     <ul className={styles.menu}>
                         <li data-section="home" className={`${styles.menu__item} ${styles.menu__item_active}`}>
-                            <a href="#" className={styles.menu__link}>Home</a>
+                            <a href="#" className={styles.menu__link}>خانه</a>
                         </li>
                         <li data-section="aboutus" className={styles.menu__item}>
-                            <a href="#" className={styles.menu__link}>About us</a>
+                            <a href="#" className={styles.menu__link}>درباره من</a>
                         </li>
                         <li data-section="resume" className={styles.menu__item}>
-                            <a href="#" className={styles.menu__link}>Resume</a>
+                            <a href="#" className={styles.menu__link}>رزومه</a>
                         </li>
-                        <li data-section="services" className={styles.menu__item}>
-                            <a href="#" className={styles.menu__link}>Services</a>
-                        </li>
-                        <li data-section="portfolio" className={styles.menu__item}>
-                            <a href="#" className={styles.menu__link}>Portfolio</a>
-                        </li>
-                        <li data-section="price" className={styles.menu__item}>
-                            <a href="#" className={styles.menu__link}>Pricing</a>
-                        </li>
-                        <li data-section="contactus" className={styles.menu__item}>
-                            <a href="#" className={styles.menu__link}>Contact</a>
-                        </li>
+                        {/*<li data-section="portfolio" className={styles.menu__item}>*/}
+                        {/*    <a href="#" className={styles.menu__link}>Portfolio</a>*/}
+                        {/*</li>*/}
+                        {/*<li data-section="contactus" className={styles.menu__item}>*/}
+                        {/*    <a href="#" className={styles.menu__link}>Contact</a>*/}
+                        {/*</li>*/}
                     </ul>
                     <div className={styles.change_theme} onClick={toggleTheme}>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
