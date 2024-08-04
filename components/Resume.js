@@ -2,7 +2,14 @@
 import styles from '../styles/Resume.module.css';
 import {useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faReact} from "@fortawesome/free-brands-svg-icons";
+import {faBootstrap, faCss3Alt, faGitAlt, faHtml5, faJs, faReact} from "@fortawesome/free-brands-svg-icons";
+import {RiNextjsFill, RiTailwindCssFill} from "react-icons/ri";
+import {FaSass} from "react-icons/fa";
+import {SiWebstorm} from "react-icons/si";
+import {VscVscode} from "react-icons/vsc";
+import Skills from "@/components/resume/Skills";
+import Education from "@/components/resume/Education";
+import Work from "@/components/resume/Work";
 
 export default function Resume() {
     const [activeContent, setActiveContent] = useState('#education');
@@ -75,71 +82,17 @@ export default function Resume() {
                     </div>
                     <div className="col-8 ">
                         <div className={`${styles.resume_content} ${activeContent === '#education' ? styles.resume_content_show : ''}`} id="education">
-                            <div className={styles.resume_content__item}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}> دانشگاه شهید مدنی آذربایجان</h5>
-                                    <span className={styles.resume_content__date}>1398-1401</span>
-                                </div>
-                                <h6 className={styles.resume_content__subtitle}>کارشناسی ارشد رشته مهندسی نرم افزار</h6>
-                                <p className={styles.resume_content__description}>آذربایجان شرقی ، تبریز</p>
-                            </div>
-                            <div className={styles.resume_content__item}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>دانشگاه فنی و حرفه ای تبریز</h5>
-                                    <span className={styles.resume_content__date}>1394-1396</span>
-                                </div>
-                                <h6 className={styles.resume_content__subtitle}>کارشناسی رشته مهندسی نرم افزار</h6>
-                                <p className={styles.resume_content__description}>آذربایجان شرقی ، تبریز</p>
-                            </div>
-                            <div className={styles.resume_content__item}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>دانشکده فنی شماره دو تبریز</h5>
-                                    <span className={styles.resume_content__date}>1392-1394</span>
-                                </div>
-                                <h6 className={styles.resume_content__subtitle}>کاردانی رشته مهندسی نرم افزار</h6>
-                                <p className={styles.resume_content__description}>آذربایجان شرقی ، تبریز</p>
-                            </div>
-                        </div>
-                        <div className={`${styles.resume_content} ${activeContent === '#work-history' ? styles.resume_content_show : ''}`} id="work-history">
-                            <div className={styles.resume_content__item}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>برنامه نویس فرانت</h5>
-                                    <span className={styles.resume_content__date}>1403/05 - 1403/01</span>
-                                </div>
-                                <h6 className={styles.resume_content__subtitle}>فریلنسر</h6>
-                                <p className={styles.resume_content__description}>انجام کارهای فریلنسری
-                                </p>
-                            </div>
-                            <div className={styles.resume_content__item}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>برنامه نویس فرانت</h5>
-                                    <span className={styles.resume_content__date}>1396/12 - 1396/07</span>
-                                </div>
-                                <h6 className={styles.resume_content__subtitle}>دانشگاه فنی تبریز</h6>
-                                <p className={styles.resume_content__description}>همکاری در سایت ثبت نام دانشجویان دانشگاه فنی تبریز</p>
-                            </div>
+                            <Education />
                         </div>
                         <div
-                            className={`${styles.resume_content_skill}  ${activeContent === '#Programming-skill' ? styles.resume_content_show : ''}`}
+                            className={`${styles.resume_content} ${activeContent === '#work-history' ? styles.resume_content_show : ''}`}
+                            id="work-history">
+                            <Work />
+                        </div>
+                        <div
+                            className={`${styles.resume_content_skill} ${activeContent === '#Programming-skill' ? styles.resume_content_show : ''}`}
                             id="Programming-skill">
-                            <div className={`${styles.resume_content__item}`}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>
-                                        <span><FontAwesomeIcon icon={faReact} style={{color: "#74C0FC",}}/></span>
-                                        React
-                                    </h5>
-                                    <span className={styles.resume_content__date}>متوسط</span>
-                                </div>
-                            </div>
-                            <div className={`${styles.resume_content__item}`}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>
-                                        <span><FontAwesomeIcon icon={faReact} style={{color: "#74C0FC",}}/></span>
-                                        React
-                                    </h5>
-                                    <span className={styles.resume_content__date}>متوسط</span>
-                                </div>
-                            </div>
+                            <Skills  />
                         </div>
                         <div
                             className={`${styles.resume_content} ${activeContent === '#designer-skills' ? styles.resume_content_show : ''}`}
@@ -150,64 +103,24 @@ export default function Resume() {
                                     <span className={styles.resume_content__date}>2010-2014</span>
                                 </div>
                                 <h6 className={styles.resume_content__subtitle}>B.sc in Computer Engineer</h6>
-                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum, giving
-                                    information on its origins, as well as a
-                                    random Lipsum generator.
-                                </p>
-                            </div>
-                            <div className={styles.resume_content__item}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>Envato University</h5>
-                                    <span className={styles.resume_content__date}>2010-2014</span>
-                                </div>
-                                <h6 className={styles.resume_content__subtitle}>B.sc in Computer Engineer</h6>
-                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum, giving
-                                    information on its origins, as well as a
-                                    random Lipsum generator.
-                                </p>
-                            </div>
-                            <div className={styles.resume_content__item}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>Envato University</h5>
-                                    <span className={styles.resume_content__date}>2010-2014</span>
-                                </div>
-                                <h6 className={styles.resume_content__subtitle}>B.sc in Computer Engineer</h6>
-                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum, giving
+                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum,
+                                    giving
                                     information on its origins, as well as a
                                     random Lipsum generator.
                                 </p>
                             </div>
                         </div>
-                        <div className={`${styles.resume_content} ${activeContent === '#seo-skills' ? styles.resume_content_show : ''}`} id="seo-skills">
+                        <div
+                            className={`${styles.resume_content} ${activeContent === '#seo-skills' ? styles.resume_content_show : ''}`}
+                            id="seo-skills">
                             <div className={styles.resume_content__item}>
                                 <div className={styles.resume_content__head}>
                                     <h5 className={styles.resume_content__title}>Envato University</h5>
                                     <span className={styles.resume_content__date}>2010-2014</span>
                                 </div>
                                 <h6 className={styles.resume_content__subtitle}>B.sc in Computer Engineer</h6>
-                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum, giving
-                                    information on its origins, as well as a
-                                    random Lipsum generator.
-                                </p>
-                            </div>
-                            <div className={styles.resume_content__item}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>Envato University</h5>
-                                    <span className={styles.resume_content__date}>2010-2014</span>
-                                </div>
-                                <h6 className={styles.resume_content__subtitle}>B.sc in Computer Engineer</h6>
-                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum, giving
-                                    information on its origins, as well as a
-                                    random Lipsum generator.
-                                </p>
-                            </div>
-                            <div className={styles.resume_content__item}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>Envato University</h5>
-                                    <span className={styles.resume_content__date}>2010-2014</span>
-                                </div>
-                                <h6 className={styles.resume_content__subtitle}>B.sc in Computer Engineer</h6>
-                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum, giving
+                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum,
+                                    giving
                                     information on its origins, as well as a
                                     random Lipsum generator.
                                 </p>
