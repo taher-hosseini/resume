@@ -32,7 +32,7 @@ export default function Home() {
         <ContactUs />
       </main>
 
-      <Footer />
+      {/*<Footer />*/}
     </>
   );
 }
