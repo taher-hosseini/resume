@@ -34,8 +34,8 @@ export default function Portfolio() {
         <section className={styles.portfolio}>
             <div className="container">
                 <div className="section-head">
-                    <h3 className="section-head__title">Portfolio</h3>
-                    <p className="section-head__caption">Check in Our Latest Works</p>
+                    <h3 className="section-head__title">تصاویر نمونه کار ها</h3>
+                    {/*<p className="section-head__caption">Check in Our Latest Works</p>*/}
                     <span className="section-head__line"></span>
                 </div>
                 <ul className={styles.portfolio_list}>
