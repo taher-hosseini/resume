@@ -1,28 +1,27 @@
 import React, { useState } from 'react';
-import styles from '../styles/Portfolio.module.scss';
+import styles from '../styles/Portfolio.module.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Controller } from 'swiper/modules';
 
 // ترکیب آرایه‌ها برای allWork
-const practice = [
-    "/images/portfolio-1.jpg",
-    "/images/portfolio-2.jpg",
-    "/images/portfolio-1.jpg",
-];
-
 const project = [
-    "/images/portfolio-3.jpg",
+    "/images/sample44.png",
+    "/images/sample33.png",
+];
+const practice = [
+    "/images/sample22.png",
+    "/images/sample11.png",
 ];
 
 const portfolioContent = {
     allWork: [
-        ...practice,
         ...project,
+        ...practice,
     ],
-    practice,
     project,
+    practice,
     // Add other categories here
 };
 
@@ -47,16 +46,16 @@ export default function Portfolio() {
                         همه
                     </li>
                     <li
-                        className={`${styles.portfolio_list__item} ${activeCategory === 'practice' ? styles.portfolio_list__item_active : ''}`}
-                        onClick={() => setActiveCategory('practice')}
-                    >
-                        تمرین
-                    </li>
-                    <li
                         className={`${styles.portfolio_list__item} ${activeCategory === 'project' ? styles.portfolio_list__item_active : ''}`}
                         onClick={() => setActiveCategory('project')}
                     >
                         پروژه
+                    </li>
+                    <li
+                        className={`${styles.portfolio_list__item} ${activeCategory === 'practice' ? styles.portfolio_list__item_active : ''}`}
+                        onClick={() => setActiveCategory('practice')}
+                    >
+                        تمرین
                     </li>
                     {/* Add other categories here */}
                 </ul>
@@ -65,7 +64,7 @@ export default function Portfolio() {
                     <Swiper
                         spaceBetween={50}
                         slidesPerView={3}
-                        pagination={{ clickable: true }}
+                        pagination={{clickable: true}}
                         modules={[Pagination, Controller]}
                         onSwiper={setFirstSwiper}
                         controller={{ control: secondSwiper }}

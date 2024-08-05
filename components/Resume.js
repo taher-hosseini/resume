@@ -11,6 +11,7 @@ import Skills from "@/components/resume/Skills";
 import Education from "@/components/resume/Education";
 import Work from "@/components/resume/Work";
 import {GrGallery} from "react-icons/gr";
+import Samples from "@/components/resume/Samples";
 
 export default function Resume() {
     const [activeContent, setActiveContent] = useState('#education');
@@ -61,25 +62,13 @@ export default function Resume() {
                             <Work />
                         </div>
                         <div
-                            className={`${styles.resume_content_skill} ${activeContent === '#Programming-skill' ? styles.resume_content_show : ''}`}
+                            className={`${styles.resume_content_skill} ${activeContent === '#Programming-skill' ? styles.resume_content_skill_show : ''}`}
                             id="Programming-skill">
                             <Skills  />
                         </div>
                         <div
-                            className={`${styles.resume_content} ${activeContent === '#Samples' ? styles.resume_content_show : ''}`}
-                            id="Samples">
-                            <div className={styles.resume_content__item}>
-                                <div className={styles.resume_content__head}>
-                                    <h5 className={styles.resume_content__title}>Envato University</h5>
-                                    <span className={styles.resume_content__date}>2010-2014</span>
-                                </div>
-                                <h6 className={styles.resume_content__subtitle}>B.sc in Computer Engineer</h6>
-                                <p className={styles.resume_content__description}>Reference site about Lorem Ipsum,
-                                    giving
-                                    information on its origins, as well as a
-                                    random Lipsum generator.
-                                </p>
-                            </div>
+                            className={`row ${styles.resume_content_samples} ${activeContent === '#Samples' ? styles.resume_content_samples_show : ''}`} id="Samples">
+                            <Samples />
                         </div>
                     </div>
                 </div>

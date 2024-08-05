@@ -47,19 +47,19 @@ export default function AboutUs() {
                         </div>
                         <h5 className={styles.about__listTitle}>شبکه های اجتماعی:</h5>
                         <div className={styles.about__linksWrapper}>
-                            <a href="#" className={styles.social}>
+                            <a href="https://github.com/taher-hosseini" className={styles.social} target="_blank">
                                 <FaGithub/>
                             </a>
-                            <a href="#" className={styles.social}>
+                            <a href="https://www.linkedin.com/in/taher-hosseini-nasab/" className={styles.social} target="_blank">
                                 <FaLinkedin/>
                             </a>
-                            <a href="#" className={styles.social}>
+                            <a href="https://t.me/taher75" className={styles.social} target="_blank">
                                 <FaTelegram/>
                             </a>
-                            <a href="#" className={styles.social}>
+                            <a href="https://www.instagram.com/taherhossieni" className={styles.social} target="_blank">
                                 <FaInstagram/>
                             </a>
-                            <a href="#" className={styles.social}>
+                            <a href="https://wa.me/qr/GIDUIC2N6R3JH1" className={styles.social} target="_blank">
                                 <FaWhatsapp/>
                             </a>
                         </div>

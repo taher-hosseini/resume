@@ -34,22 +34,3 @@
     max-height: 500px;
     object-fit: cover;
 }
-// app.css
-//.swiper-pagination {
-//    position: static !important;
-//    margin-top: 1rem;
-//    display: flex;
-//    justify-content: center;
-//}
-//
-//.swiper-pagination-bullet {
-//    width: 1.8rem !important;
-//    height: 1.8rem !important;
-//    border: 0.3rem solid #BFBEBE !important;
-//    background: #fff !important;
-//    opacity: 1 !important;
-//}
-//
-//.swiper-pagination-bullet-active {
-//    border-color: var(--primary-color) !important;
-//}
