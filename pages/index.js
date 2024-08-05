@@ -29,10 +29,10 @@ export default function Home() {
         {/*<Services />*/}
         <Resume />
         <Portfolio />
-        <ContactUs />
+        {/*<ContactUs />*/}
       </main>
 
-      {/*<Footer />*/}
+      <Footer />
     </>
   );
 }

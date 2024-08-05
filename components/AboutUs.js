@@ -1,5 +1,6 @@
 // components/AboutUs.js
 import styles from '../styles/AboutUs.module.css';
+import {FaGithub, FaInstagram, FaLinkedin, FaTelegram, FaWhatsapp} from "react-icons/fa";
 
 export default function AboutUs() {
     return (
@@ -17,7 +18,10 @@ export default function AboutUs() {
                     <div className={`col-12 col-lg-6 ${styles.about__content}`}>
                         <h4 className={styles.about__title}>معرفی:</h4>
                         <p className={styles.about__description}>
-                            سلام! من طاهر حسینی نسب، فارغ التحصیل کارشناسی ارشد مهندسی نرم افزار از دانشگاه مدنی آذربایجان هستم. به عنوان توسعه دهنده فرانت وب با تخصص در React فعالیت می کنم. هدف من ایجاد رابط های کاربری دینامیک و بهینه سازی عملکرد وب سایت ها است. به دنبال فرصت های همکاری در پروژه های جدید هستم تا بهترین تجربه های کاربری را ارائه دهم.
+                            سلام! من طاهر حسینی نسب، فارغ التحصیل کارشناسی ارشد مهندسی نرم افزار از دانشگاه مدنی
+                            آذربایجان هستم. به عنوان توسعه دهنده فرانت وب با تخصص در React فعالیت می کنم. هدف من ایجاد
+                            رابط های کاربری دینامیک و بهینه سازی عملکرد وب سایت ها است. به دنبال فرصت های همکاری در
+                            پروژه های جدید هستم تا بهترین تجربه های کاربری را ارائه دهم.
 
 
                         </p>
@@ -27,12 +31,37 @@ export default function AboutUs() {
                             <li className={styles.aboutList__item}>مدیریت وضعیت با Redux و Context API</li>
                             <li className={styles.aboutList__item}>توسعه رابط‌های کاربری واکنش‌گرا</li>
                             <li className={styles.aboutList__item}>مدیریت پروژه و نسخه‌گذاری با Git و GitHub</li>
-                            <li className={styles.aboutList__item}>علاقه‌مند به یادگیری فناوری‌های جدید و به‌روز نگه‌داشتن مهارت‌ها</li>
+                            <li className={styles.aboutList__item}>علاقه‌مند به یادگیری فناوری‌های جدید و به‌روز
+                                نگه‌داشتن مهارت‌ها
+                            </li>
                         </ul>
+                        <div className={styles.about__contact__wrapper}>
+                            <div >
+                                <h5 className={styles.about__listTitle}>شماره تماس:</h5>
+                                <p>09376585194</p>
+                            </div>
+                            <div >
+                                <h5 className={styles.about__listTitle}>ایمیل:</h5>
+                                <p>taherhossieninasab@gmail.com</p>
+                            </div>
+                        </div>
+                        <h5 className={styles.about__listTitle}>شبکه های اجتماعی:</h5>
                         <div className={styles.about__linksWrapper}>
-                            <a href="#" className={`${styles.appBtn} ${styles.about__link}`}>Hire Me</a>
-                            <a href="#" className={`${styles.appBtn} ${styles.appBtnOrange} ${styles.about__link}`}>Get
-                                Resume</a>
+                            <a href="#" className={styles.social}>
+                                <FaGithub/>
+                            </a>
+                            <a href="#" className={styles.social}>
+                                <FaLinkedin/>
+                            </a>
+                            <a href="#" className={styles.social}>
+                                <FaTelegram/>
+                            </a>
+                            <a href="#" className={styles.social}>
+                                <FaInstagram/>
+                            </a>
+                            <a href="#" className={styles.social}>
+                                <FaWhatsapp/>
+                            </a>
                         </div>
                     </div>
                 </div>

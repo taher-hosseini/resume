@@ -17,7 +17,6 @@
     min-height: 40rem;
     margin-left: 3rem;
     height: max-content;
-    width: 100%;
 }
 .resume_list::before{
     position: absolute;
@@ -64,6 +63,7 @@
     width: 2.2rem;
     height: 2.2rem;
     margin: 0 0.8rem;
+    color: #fff;
 }
 .resume_list__text{
     font-family: "vazir_bold" , "sans-serif";
