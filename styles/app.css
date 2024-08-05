@@ -137,3 +137,6 @@ body{
 .swiper-pagination-bullet-active {
     border-color: var(--primary-color) !important;
 }
+.swiper-slide{
+    height: auto !important;
+}
