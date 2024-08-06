@@ -1,22 +1,66 @@
 // components/Header.js
 import styles from '../styles/Header.module.css';
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
+import {MdDarkMode} from "react-icons/md";
+import {CiLight} from "react-icons/ci";
+
+const getInitialTheme = () => {
+    if (typeof window !== 'undefined') {
+        const savedTheme = localStorage.getItem('isDarkTheme');
+        return savedTheme ? JSON.parse(savedTheme) : false;
+    }
+    return false; // مقدار پیش‌فرض در صورت عدم وجود localStorage
+};
 
 export default function Header() {
-    const [isDarkTheme, setIsDarkTheme] = useState(false);
+    const [isDarkTheme, setIsDarkTheme] = useState(getInitialTheme);
+    const [activeSection, setActiveSection] = useState('home');
+    const sectionRefs = useRef([]);
 
     useEffect(() => {
-        const root = document.documentElement;
+        if (typeof window !== 'undefined') {
+            const root = document.documentElement;
 
-        if (isDarkTheme) {
-            root.classList.add('dark-theme');
-        } else {
-            root.classList.remove('dark-theme');
+            if (isDarkTheme) {
+                root.classList.add('dark-theme');
+            } else {
+                root.classList.remove('dark-theme');
+            }
+
+            // ذخیره تم در localStorage
+            localStorage.setItem('isDarkTheme', JSON.stringify(isDarkTheme));
         }
     }, [isDarkTheme]);
 
     const toggleTheme = () => {
         setIsDarkTheme(prevTheme => !prevTheme);
+    };
+
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.6 }
+        );
+
+        sectionRefs.current.forEach(section => observer.observe(section));
+
+        return () => {
+            sectionRefs.current.forEach(section => observer.unobserve(section));
+        };
+    }, []);
+
+    const scrollToSection = (sectionId) => {
+        const section = sectionRefs.current.find(ref => ref.id === sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (
@@ -33,18 +77,12 @@ export default function Header() {
                         <li data-section="resume" className={styles.menu__item}>
                             <a href="#" className={styles.menu__link}>رزومه</a>
                         </li>
-                        {/*<li data-section="portfolio" className={styles.menu__item}>*/}
-                        {/*    <a href="#" className={styles.menu__link}>Portfolio</a>*/}
-                        {/*</li>*/}
-                        {/*<li data-section="contactus" className={styles.menu__item}>*/}
-                        {/*    <a href="#" className={styles.menu__link}>Contact</a>*/}
-                        {/*</li>*/}
+                        <li data-section="portfolio" className={styles.menu__item}>
+                            <a href="#" className={styles.menu__link}>تصاویر</a>
+                        </li>
                     </ul>
                     <div className={styles.change_theme} onClick={toggleTheme}>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path
-                                d="M12.3,4.9c0.4-0.2,0.6-0.7,0.5-1.1S12.2,3,11.7,3C6.8,3.1,3,7.1,3,12c0,5,4,9,9,9c3.8,0,7.1-2.4,8.4-5.9c0.2-0.4,0-0.9-0.4-1.2c-0.4-0.3-0.9-0.2-1.2,0.1c-1,0.9-2.3,1.4-3.7,1.4c-3.1,0-5.7-2.5-5.7-5.7C9.4,7.8,10.5,5.9,12.3,4.9zM15.1,17.4c0.5,0,1,0,1.4-0.1C15.3,18.4,13.7,19,12,19c-3.9,0-7-3.1-7-7c0-2.5,1.4-4.8,3.5-6c-0.7,1.1-1,2.4-1,3.8C7.4,14,10.9,17.4,15.1,17.4z"/>
-                        </svg>
+                        {isDarkTheme?<CiLight />:<MdDarkMode />}
                     </div>
                     {/*<h1 className={styles.nav__logo}>WA</h1>*/}
                     <div className={styles.nav__toggle_icon}>
