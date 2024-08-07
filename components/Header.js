@@ -12,10 +12,15 @@ const getInitialTheme = () => {
     return false; // مقدار پیش‌فرض در صورت عدم وجود localStorage
 };
 
-export default function Header() {
+export default function Header({ sectionIds, onScrollToSection, activeSection }) {
     const [isDarkTheme, setIsDarkTheme] = useState(getInitialTheme);
-    const [activeSection, setActiveSection] = useState('home');
-    const sectionRefs = useRef([]);
+
+    const menuItems = {
+        home: "خانه",
+        aboutus: "درباره من",
+        resume: "رزومه",
+        portfolio: "تصاویر"
+    };
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
@@ -37,49 +42,21 @@ export default function Header() {
     };
 
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
-            },
-            { threshold: 0.6 }
-        );
-
-        sectionRefs.current.forEach(section => observer.observe(section));
-
-        return () => {
-            sectionRefs.current.forEach(section => observer.unobserve(section));
-        };
-    }, []);
-
-    const scrollToSection = (sectionId) => {
-        const section = sectionRefs.current.find(ref => ref.id === sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
         <header className={`${styles.header} header_g`}>
             <div className="container">
                 <nav className={styles.nav}>
                     <ul className={styles.menu}>
-                        <li data-section="home" className={`${styles.menu__item} ${styles.menu__item_active}`}>
-                            <a href="#" className={styles.menu__link}>خانه</a>
-                        </li>
-                        <li data-section="aboutus" className={styles.menu__item}>
-                            <a href="#" className={styles.menu__link}>درباره من</a>
-                        </li>
-                        <li data-section="resume" className={styles.menu__item}>
-                            <a href="#" className={styles.menu__link}>رزومه</a>
-                        </li>
-                        <li data-section="portfolio" className={styles.menu__item}>
-                            <a href="#" className={styles.menu__link}>تصاویر</a>
-                        </li>
+                        {sectionIds.map((sectionId) => (
+                            <li
+                                key={sectionId}
+                                className={`${styles.menu__item} ${activeSection === sectionId ? styles.menu__item_active : ''}`}
+                            >
+                                <a href="#" className={styles.menu__link} onClick={(e) => { e.preventDefault(); onScrollToSection(sectionId); }}>
+                                    {menuItems[sectionId]}
+                                </a>
+                            </li>
+                        ))}
                     </ul>
                     <div className={styles.change_theme} onClick={toggleTheme}>
                         {isDarkTheme?<CiLight />:<MdDarkMode />}

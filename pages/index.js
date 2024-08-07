@@ -9,10 +9,61 @@ import Resume from "@/components/Resume";
 import Portfolio from "@/components/Portfolio";
 import ContactUs from "@/components/ContactUs";
 import Footer from "@/components/Footer";
+import React, {useEffect, useRef, useState} from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+    const homeRef = useRef(null);
+    const aboutUsRef = useRef(null);
+    const resumeRef = useRef(null);
+    const portfolioRef = useRef(null);
+
+    const sectionRefs = { home: homeRef, aboutus: aboutUsRef, resume: resumeRef, portfolio: portfolioRef };
+    const sectionIds = Object.keys(sectionRefs);
+
+    const [activeSection, setActiveSection] = useState('home');
+
+    const scrollToSection = (sectionId) => {
+        const section = sectionRefs[sectionId];
+        if (section && section.current) {
+            const offset = -70; // تنظیم مقدار offset به دلخواه
+            const elementPosition = section.current.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition + offset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                });
+            },
+            { threshold: 0.6 }
+        );
+
+        sectionIds.forEach(id => {
+            if (sectionRefs[id].current) {
+                observer.observe(sectionRefs[id].current);
+            }
+        });
+
+        return () => {
+            sectionIds.forEach(id => {
+                if (sectionRefs[id].current) {
+                    observer.unobserve(sectionRefs[id].current);
+                }
+            });
+        };
+    }, [sectionRefs, sectionIds]);
   return (
     <>
       <Head>
@@ -21,18 +72,30 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      <Header sectionIds={sectionIds} onScrollToSection={scrollToSection} activeSection={activeSection} />
 
-      <main>
-        <HomeSection />
-        <AboutUs />
-        {/*<Services />*/}
-        <Resume />
-        <Portfolio />
-        {/*<ContactUs />*/}
-      </main>
+        <main>
+            <section id="home" ref={homeRef}>
+                <HomeSection/>
+            </section>
+            <section id="aboutus" ref={aboutUsRef}>
+                <AboutUs/>
+            </section>
+            <section id="resume" ref={resumeRef}>
+                <Resume/>
+            </section>
+            <section id="portfolio" ref={portfolioRef}>
+                <Portfolio/>
+            </section>
+            {/*<HomeSection />*/}
+            {/*<AboutUs />*/}
+            {/*/!*<Services />*!/*/}
+            {/*<Resume />*/}
+            {/*<Portfolio />*/}
+            {/*/!*<ContactUs />*!/*/}
+        </main>
 
-      <Footer />
+        <Footer/>
     </>
   );
 }
