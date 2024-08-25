@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Controller } from 'swiper/modules';
+import Image from "next/image";
 
 // ترکیب آرایه‌ها برای allWork
 const project = [
@@ -71,11 +72,7 @@ export default function Portfolio() {
                     >
                         {portfolioContent[activeCategory].map((image, index) => (
                             <SwiperSlide key={index}>
-                                <img
-                                    src={image}
-                                    className={styles.portfolio_content__img}
-                                    alt={`portfolio-${index}`}
-                                />
+                                <Image className={styles.portfolio_content__img} src={image} width='2000' height='1000'  alt={`portfolio-${index}`} />
                             </SwiperSlide>
                         ))}
                     </Swiper>

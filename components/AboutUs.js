@@ -1,6 +1,7 @@
 // components/AboutUs.js
 import styles from '../styles/AboutUs.module.css';
 import {FaGithub, FaInstagram, FaLinkedin, FaTelegram, FaWhatsapp} from "react-icons/fa";
+import Image from "next/image";
 
 export default function AboutUs() {
     return (
@@ -13,7 +14,7 @@ export default function AboutUs() {
                 </div>
                 <div className={`${styles.about} row about_g`}>
                     <div className={`col-12 col-lg-6 ${styles.about__cover}`}>
-                        <img className={styles.about__img} src="/images/taher2.JPG" alt="about"/>
+                        <Image className={styles.about__img} src="/images/taher2.JPG" width='2000' height='1000'  alt="about" />
                     </div>
                     <div className={`col-12 col-lg-6 ${styles.about__content}`}>
                         <h4 className={styles.about__title}>معرفی:</h4>

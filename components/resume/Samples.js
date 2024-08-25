@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../../styles/Resume.module.css';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
+import Image from "next/image";
 
 const sampleProjects = [
     {
@@ -36,7 +37,9 @@ export default function Samples() {
                 <div key={index} className={`col-12 col-md-6`}>
                     <div className={`${styles.resume_content__item_samples}`}>
                         <div className={styles.resume_content__img_wrapper_samples}>
-                            <img src={project.imgSrc} alt="" className={styles.resume_content__img_samples} />
+                            {/*<img src={project.imgSrc} alt="" className={styles.resume_content__img_samples} />*/}
+                            <Image className={styles.resume_content__img_samples} src={project.imgSrc} width='2000' height='1500'  alt="" />
+
                         </div>
                         <div className={styles.resume_content__head_samples}>
                             <h5 className={styles.resume_content__title_samples}>{project.title}</h5>
